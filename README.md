@@ -58,13 +58,13 @@ PortfolioAI/
 │   └── PortfolioAI_RAG.ipynb
 │
 ├── docs/
-│   ├── Guia_Mestre_Documentacao - PortfolioAI.pdf
-│   ├── Project_Charter  - PortfolioAI.pdf
-│   ├── Product_Vision - PortfolioAI.pdf
-│   ├── Requisitos_SRS - PortfolioAI.pdf
-│   ├── Arquitetura_da_Solucao - PortfolioAI.pdf
-│   ├── Product_Backlog - PortfolioAI.pdf
-│   ├── Mapa_Experiencia_Usuario - PortfolioAI.pdf
+│   ├── Arquitetura da Solução - PortfolioAI.pdf
+│   ├── Especificação de Requisitos de Software - PortfolioAI.pdf
+│   ├── Guia Mestre da Documentação - PortfolioAI.pdf
+│   ├── Mapa da Experiência do Usuário  - PortfolioAI.pdf
+│   ├── PortfolioAI Vision - PortfolioAI.pdf
+│   ├── Product Backlog - PortfolioAI.pdf
+│   ├── PROJECT CHARTER - Projeto PortfolioAI.pdf
 │   │
 │   └── diagrams/
 │       ├── arquitetura.png
