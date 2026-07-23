@@ -72,11 +72,14 @@ PortfolioAI/
 │       └── jornada_usuario.png
 │
 ├── knowledge_base/
-│   ├── curriculo.pdf
-│   ├── projetos.pdf
-│   ├── competencias.pdf
-│   ├── faq.pdf
-│   └── contato.pdf
+│   ├── Competências Comportamentais – Elisângela de Souza.pdf
+│   ├── Competências Técnicas - Elisângela de Souza.pdf
+│   ├── Desenvolvimento Profissional Contínuo – Elisângela de Souza.pdf
+│   ├── FAQ – Elisângela de Souza.pdf
+│   ├── Formação Acadêmica - Elisângela de Souza.pdf
+│   ├── Perfil Profissional – Elisângela de Souza.pdf
+│   ├── Projetos e Cases – Elisângela de Souza.pdf
+│   ├── Trajetória Profissional – Elisângela de Souza.pdf
 │
 ├── vector_store/
 │   └── FAISS/
