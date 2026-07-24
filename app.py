@@ -123,7 +123,7 @@ st.markdown("""
 
 <p style="text-align:center;color:lightgray">
 
-© Elisângela de Souza
+© PortfolioAI | 2026 | Elisângela de Souza
 
 </p>
 
