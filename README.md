@@ -71,6 +71,10 @@ PortfolioAI/
 │       ├── fluxo_rag.png
 │       └── jornada_usuario.png
 │
+├── assets/
+│   ├── celular.png
+│   ├── fundo.png
+│
 ├── knowledge_base/
 │   ├── Competências Comportamentais – Elisângela de Souza.pdf
 │   ├── Competências Técnicas - Elisângela de Souza.pdf
