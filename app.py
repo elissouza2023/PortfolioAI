@@ -1,4 +1,6 @@
 import streamlit as st
+import base64
+from pathlib import Path
 
 # -------------------------
 # CONFIGURAÇÃO DA PÁGINA
@@ -11,118 +13,126 @@ st.set_page_config(
 )
 
 # -------------------------
+# FUNÇÃO PARA CARREGAR IMAGEM EM BASE64
+# -------------------------
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, "rb") as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+# Carrega a imagem de fundo
+try:
+    fundo_base64 = get_base64_of_bin_file("assets/fundo.png")
+    fundo_css = f'url("data:image/png;base64,{fundo_base64}")'
+except Exception:
+    # Fallback caso o arquivo não exista
+    fundo_css = "none"
+
+# -------------------------
 # CSS GLOBAL
 # -------------------------
-st.markdown("""
+st.markdown(f"""
 <style>
 /* Remove elementos padrão do Streamlit */
-#MainMenu {visibility: hidden;}
-header {visibility: hidden;}
-footer {visibility: hidden;}
-.stDeployButton {display: none;}
+#MainMenu {{visibility: hidden;}}
+header {{visibility: hidden;}}
+footer {{visibility: hidden;}}
+.stDeployButton {{display: none;}}
 
-/* Fundo principal */
-.stApp {
+/* Fundo principal com imagem (base64) */
+.stApp {{
     background-color: #0A3153;
-    background-image: radial-gradient(circle at 20% 50%, rgba(11, 56, 95, 0.4) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 20%, rgba(11, 56, 95, 0.3) 0%, transparent 40%);
-}
+    background-image: {fundo_css};
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}}
 
 /* Título */
-.titulo-principal {
+.titulo-principal {{
     text-align: center;
-    color: #FFFFFF;
-    font-size: 2.1rem;
+    color: #FFFFFF !important;
+    font-size: 1.55rem;
     font-weight: 500;
-    margin-top: 1.2rem;
-    margin-bottom: 0.3rem;
-    letter-spacing: 0.5px;
-}
-
-/* Subtítulo */
-.subtitulo {
-    text-align: center;
-    color: #FFFFFF;
-    font-size: 1.15rem;
-    margin-bottom: 1.8rem;
-    opacity: 0.95;
-}
+    margin-top: 0.8rem;
+    margin-bottom: 0.15rem;
+    letter-spacing: 0.3px;
+    line-height: 1.35;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+}}
 
 /* Container dos cards inferiores (azul 50% transparente) */
-.card-azul {
-    background-color: rgba(11, 56, 95, 0.5);
-    border-radius: 18px;
-    padding: 18px 18px 14px 18px;
-    margin-bottom: 10px;
-}
-
-/* Card branco interno */
-.card-branco {
-    background-color: #FFFFFF;
-    border-radius: 14px;
-    padding: 14px 16px;
-    min-height: 140px;
-}
+.card-azul {{
+    background-color: rgba(11, 56, 95, 0.55);
+    border-radius: 16px;
+    padding: 14px 14px 12px 14px;
+    margin-bottom: 6px;
+    backdrop-filter: blur(6px);
+}}
 
 /* Labels dos cards */
-.label-card {
+.label-card {{
     color: #FFFFFF;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     padding-left: 4px;
-}
+}}
 
 /* Placeholder e texto interno dos text_area */
-.stTextArea textarea {
+.stTextArea textarea {{
     color: #8E8E93 !important;
-    font-size: 0.95rem !important;
+    font-size: 0.92rem !important;
     background-color: #FFFFFF !important;
     border: none !important;
     border-radius: 10px !important;
-}
+}}
 
-.stTextArea textarea::placeholder {
+.stTextArea textarea::placeholder {{
     color: #8E8E93 !important;
     opacity: 0.85;
-}
+}}
 
 /* Botão Enviar */
-div.stButton > button {
+div.stButton > button {{
     background-color: #FFFFFF;
     color: #0B385F;
     border: none;
-    border-radius: 10px;
-    padding: 0.45rem 1.4rem;
+    border-radius: 9px;
+    padding: 0.4rem 1.3rem;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: all 0.2s ease;
-}
+}}
 
-div.stButton > button:hover {
+div.stButton > button:hover {{
     background-color: #E8F0F8;
     color: #0B385F;
     border: none;
-}
+}}
 
-/* Rodapé */
-.rodape {
+/* Rodapé fixo na parte inferior */
+.rodape {{
     background-color: #D9D9D9;
     color: #081623;
     text-align: center;
     padding: 12px 0;
-    font-size: 0.9rem;
-    margin-top: 2.5rem;
-    border-radius: 0;
+    font-size: 0.88rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
-}
+    z-index: 999;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+}}
 
-/* Ajustes de espaçamento */
-.block-container {
-    padding-top: 1rem !important;
-    padding-bottom: 0 !important;
-    max-width: 1100px;
-}
+/* Espaço extra no final para o rodapé não cobrir o conteúdo */
+.block-container {{
+    padding-top: 0.6rem !important;
+    padding-bottom: 70px !important;
+    max-width: 1050px;
+}}
 </style>
 """, unsafe_allow_html=True)
 
@@ -137,28 +147,27 @@ st.markdown(
 # -------------------------
 # IMAGEM CENTRAL (celular)
 # -------------------------
-col_esq, col_centro, col_dir = st.columns([1.2, 1.6, 1.2])
+col_esq, col_centro, col_dir = st.columns([1.3, 1.4, 1.3])
 
 with col_centro:
     st.image("assets/celular.png", use_container_width=True)
 
-# Espaço pequeno após a imagem
-st.markdown("<div style='height: 18px;'></div>", unsafe_allow_html=True)
+# Pequeno espaço após a imagem
+st.markdown("<div style='height: 12px;'></div>", unsafe_allow_html=True)
 
 # -------------------------
-# ÁREA DE PERGUNTA E RESPOSTA (dois cards)
+# ÁREA DE PERGUNTA E RESPOSTA
 # -------------------------
 col_pergunta, col_resposta = st.columns(2, gap="medium")
 
 # ---- Card da Pergunta ----
 with col_pergunta:
     st.markdown('<div class="label-card">Faça sua pergunta</div>', unsafe_allow_html=True)
-
     st.markdown('<div class="card-azul">', unsafe_allow_html=True)
 
     pergunta = st.text_area(
         label="pergunta",
-        height=130,
+        height=125,
         placeholder="Digite aqui sua pergunta que o assistente consultará a base de dados.",
         label_visibility="collapsed",
         key="input_pergunta"
@@ -173,23 +182,21 @@ with col_pergunta:
 
 # ---- Card da Resposta ----
 with col_resposta:
-    st.markdown('<div class="label-card">&nbsp;</div>', unsafe_allow_html=True)  # alinhamento visual
+    st.markdown('<div class="label-card">&nbsp;</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="card-azul">', unsafe_allow_html=True)
 
-    # Inicializa session_state
     if "resposta" not in st.session_state:
         st.session_state.resposta = ""
 
-    # Lógica de envio
     if enviar and pergunta.strip():
         try:
             from backend.chat import perguntar
             with st.spinner("Consultando a base de conhecimento..."):
                 st.session_state.resposta = perguntar(pergunta)
-        except Exception as e:
+        except Exception:
             st.session_state.resposta = (
-                "Desculpe, ocorreu um erro ao processar sua pergunta. "
+                "Desculpe, não encontrei resposta a sua pergunta. "
                 "Tente novamente ou entre em contato: elissouza@outlook.com.br"
             )
     elif enviar and not pergunta.strip():
@@ -198,7 +205,7 @@ with col_resposta:
     st.text_area(
         label="resposta",
         value=st.session_state.resposta if st.session_state.resposta else "",
-        height=160,
+        height=155,
         placeholder="A resposta do Portfolio AI aparecerá aqui. Faça sua pergunta",
         label_visibility="collapsed",
         disabled=True,
