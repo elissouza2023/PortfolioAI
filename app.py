@@ -20,12 +20,10 @@ def get_base64_of_bin_file(bin_file):
         data = f.read()
     return base64.b64encode(data).decode()
 
-# Carrega a imagem de fundo
 try:
     fundo_base64 = get_base64_of_bin_file("assets/fundo.png")
     fundo_css = f'url("data:image/png;base64,{fundo_base64}")'
 except Exception:
-    # Fallback caso o arquivo não exista
     fundo_css = "none"
 
 # -------------------------
@@ -39,7 +37,7 @@ header {{visibility: hidden;}}
 footer {{visibility: hidden;}}
 .stDeployButton {{display: none;}}
 
-/* Fundo principal com imagem (base64) */
+/* Fundo principal */
 .stApp {{
     background-color: #0A3153;
     background-image: {fundo_css};
@@ -62,31 +60,32 @@ footer {{visibility: hidden;}}
     text-shadow: 0 2px 6px rgba(0,0,0,0.45);
 }}
 
-/* Container dos cards inferiores (azul 50% transparente) */
+/* ===== CARDS AZUIS (fundo/container) ===== */
 .card-azul {{
-    background-color: rgba(11, 56, 95, 0.55);
-    border-radius: 16px;
-    padding: 14px 14px 12px 14px;
-    margin-bottom: 6px;
+    background-color: rgba(11, 56, 95, 0.55) !important;
+    border-radius: 18px !important;
+    padding: 18px 18px 16px 18px !important;
+    margin-bottom: 8px !important;
     backdrop-filter: blur(6px);
 }}
 
-/* Labels dos cards */
+/* Labels */
 .label-card {{
     color: #FFFFFF;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     font-weight: 500;
-    margin-bottom: 6px;
-    padding-left: 4px;
+    margin-bottom: 8px;
+    padding-left: 6px;
 }}
 
-/* Placeholder e texto interno dos text_area */
+/* Text areas (cards brancos) */
 .stTextArea textarea {{
     color: #8E8E93 !important;
-    font-size: 0.92rem !important;
+    font-size: 0.93rem !important;
     background-color: #FFFFFF !important;
     border: none !important;
-    border-radius: 10px !important;
+    border-radius: 12px !important;
+    padding: 14px !important;
 }}
 
 .stTextArea textarea::placeholder {{
@@ -96,23 +95,22 @@ footer {{visibility: hidden;}}
 
 /* Botão Enviar */
 div.stButton > button {{
-    background-color: #FFFFFF;
-    color: #0B385F;
-    border: none;
-    border-radius: 9px;
-    padding: 0.4rem 1.3rem;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
+    background-color: #FFFFFF !important;
+    color: #0B385F !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 0.4rem 1.4rem !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }}
 
 div.stButton > button:hover {{
-    background-color: #E8F0F8;
-    color: #0B385F;
-    border: none;
+    background-color: #E8F0F8 !important;
+    color: #0B385F !important;
 }}
 
-/* Rodapé fixo na parte inferior */
+/* Rodapé fixo */
 .rodape {{
     background-color: #D9D9D9;
     color: #081623;
@@ -127,7 +125,7 @@ div.stButton > button:hover {{
     box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
 }}
 
-/* Espaço extra no final para o rodapé não cobrir o conteúdo */
+/* Espaçamento geral */
 .block-container {{
     padding-top: 0.6rem !important;
     padding-bottom: 70px !important;
@@ -152,35 +150,41 @@ col_esq, col_centro, col_dir = st.columns([1.3, 1.4, 1.3])
 with col_centro:
     st.image("assets/celular.png", use_container_width=True)
 
-# Pequeno espaço após a imagem
-st.markdown("<div style='height: 12px;'></div>", unsafe_allow_html=True)
+st.markdown("<div style='height: 14px;'></div>", unsafe_allow_html=True)
 
 # -------------------------
 # ÁREA DE PERGUNTA E RESPOSTA
 # -------------------------
-col_pergunta, col_resposta = st.columns(2, gap="medium")
+col_pergunta, col_resposta = st.columns(2, gap="large")
 
-# ---- Card da Pergunta ----
+# =========================================================
+# CARD DA PERGUNTA (azul por baixo + branco por cima)
+# =========================================================
 with col_pergunta:
     st.markdown('<div class="label-card">Faça sua pergunta</div>', unsafe_allow_html=True)
+
+    # Abre o container azul
     st.markdown('<div class="card-azul">', unsafe_allow_html=True)
 
+    # Botão no topo direito (igual ao mockup)
+    btn_col1, btn_col2 = st.columns([3.2, 1])
+    with btn_col2:
+        enviar = st.button("Enviar", use_container_width=True)
+
+    # Text area (card branco)
     pergunta = st.text_area(
         label="pergunta",
-        height=125,
+        height=140,
         placeholder="Digite aqui sua pergunta que o assistente consultará a base de dados.",
         label_visibility="collapsed",
         key="input_pergunta"
     )
 
-    # Botão alinhado à direita
-    btn_col1, btn_col2 = st.columns([3, 1])
-    with btn_col2:
-        enviar = st.button("Enviar", use_container_width=True)
-
     st.markdown('</div>', unsafe_allow_html=True)
 
-# ---- Card da Resposta ----
+# =========================================================
+# CARD DA RESPOSTA (azul por baixo + branco por cima)
+# =========================================================
 with col_resposta:
     st.markdown('<div class="label-card">&nbsp;</div>', unsafe_allow_html=True)
 
@@ -205,7 +209,7 @@ with col_resposta:
     st.text_area(
         label="resposta",
         value=st.session_state.resposta if st.session_state.resposta else "",
-        height=155,
+        height=180,
         placeholder="A resposta do Portfolio AI aparecerá aqui. Faça sua pergunta",
         label_visibility="collapsed",
         disabled=True,
