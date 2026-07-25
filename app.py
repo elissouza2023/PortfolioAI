@@ -1,6 +1,5 @@
 import streamlit as st
 import base64
-from pathlib import Path
 
 # -------------------------
 # CONFIGURAÇÃO DA PÁGINA
@@ -60,25 +59,25 @@ footer {{visibility: hidden;}}
     text-shadow: 0 2px 6px rgba(0,0,0,0.45);
 }}
 
-/* ===== CARDS AZUIS (fundo/container) ===== */
-.card-azul {{
-    background-color: rgba(11, 56, 95, 0.55) !important;
-    border-radius: 18px !important;
-    padding: 18px 18px 16px 18px !important;
-    margin-bottom: 8px !important;
-    backdrop-filter: blur(6px);
-}}
-
 /* Labels */
 .label-card {{
     color: #FFFFFF;
     font-size: 0.92rem;
     font-weight: 500;
-    margin-bottom: 8px;
-    padding-left: 6px;
+    margin-bottom: 10px;
+    padding-left: 4px;
 }}
 
-/* Text areas (cards brancos) */
+/* ===== CARD AZUL (container) + CARD BRANCO (textarea) ===== */
+div[data-testid="stTextArea"] {{
+    background-color: rgba(11, 56, 95, 0.55) !important;
+    border-radius: 18px !important;
+    padding: 16px 16px 12px 16px !important;
+    margin-bottom: 0 !important;
+    backdrop-filter: blur(6px);
+}}
+
+/* O textarea em si (card branco) */
 .stTextArea textarea {{
     color: #8E8E93 !important;
     font-size: 0.93rem !important;
@@ -93,7 +92,7 @@ footer {{visibility: hidden;}}
     opacity: 0.85;
 }}
 
-/* Botão Enviar */
+/* Botão Enviar (agora dentro do card) */
 div.stButton > button {{
     background-color: #FFFFFF !important;
     color: #0B385F !important;
@@ -102,7 +101,8 @@ div.stButton > button {{
     padding: 0.4rem 1.4rem !important;
     font-weight: 600 !important;
     font-size: 0.9rem !important;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+    margin-top: 8px !important;
 }}
 
 div.stButton > button:hover {{
@@ -158,37 +158,30 @@ st.markdown("<div style='height: 14px;'></div>", unsafe_allow_html=True)
 col_pergunta, col_resposta = st.columns(2, gap="large")
 
 # =========================================================
-# CARD DA PERGUNTA (azul por baixo + branco por cima)
+# CARD DA PERGUNTA
 # =========================================================
 with col_pergunta:
     st.markdown('<div class="label-card">Faça sua pergunta</div>', unsafe_allow_html=True)
 
-    # Abre o container azul
-    st.markdown('<div class="card-azul">', unsafe_allow_html=True)
-
-    # Botão no topo direito (igual ao mockup)
-    btn_col1, btn_col2 = st.columns([3.2, 1])
-    with btn_col2:
-        enviar = st.button("Enviar", use_container_width=True)
-
-    # Text area (card branco)
+    # Text area (card azul + branco)
     pergunta = st.text_area(
         label="pergunta",
-        height=140,
+        height=145,
         placeholder="Digite aqui sua pergunta que o assistente consultará a base de dados.",
         label_visibility="collapsed",
         key="input_pergunta"
     )
 
-    st.markdown('</div>', unsafe_allow_html=True)
+    # Botão DENTRO do card azul (alinhado à direita)
+    btn_col1, btn_col2 = st.columns([3, 1])
+    with btn_col2:
+        enviar = st.button("Enviar", use_container_width=True)
 
 # =========================================================
-# CARD DA RESPOSTA (azul por baixo + branco por cima)
+# CARD DA RESPOSTA
 # =========================================================
 with col_resposta:
     st.markdown('<div class="label-card">&nbsp;</div>', unsafe_allow_html=True)
-
-    st.markdown('<div class="card-azul">', unsafe_allow_html=True)
 
     if "resposta" not in st.session_state:
         st.session_state.resposta = ""
@@ -209,14 +202,12 @@ with col_resposta:
     st.text_area(
         label="resposta",
         value=st.session_state.resposta if st.session_state.resposta else "",
-        height=180,
+        height=185,
         placeholder="A resposta do Portfolio AI aparecerá aqui. Faça sua pergunta",
         label_visibility="collapsed",
         disabled=True,
         key="output_resposta"
     )
-
-    st.markdown('</div>', unsafe_allow_html=True)
 
 # -------------------------
 # RODAPÉ
