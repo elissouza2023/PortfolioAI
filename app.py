@@ -1,9 +1,9 @@
 import streamlit as st
 import base64
 
-# -------------------------
+
 # CONFIGURAÇÃO DA PÁGINA
-# -------------------------
+
 st.set_page_config(
     page_title="PortfolioAI",
     page_icon="🤖",
@@ -11,9 +11,8 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# -------------------------
 # FUNÇÃO PARA CARREGAR IMAGEM EM BASE64
-# -------------------------
+
 def get_base64_of_bin_file(bin_file):
     with open(bin_file, "rb") as f:
         data = f.read()
@@ -25,9 +24,9 @@ try:
 except Exception:
     fundo_css = "none"
 
-# -------------------------
+
 # CSS GLOBAL
-# -------------------------
+
 st.markdown(f"""
 <style>
 /* Remove elementos padrão do Streamlit */
@@ -79,7 +78,7 @@ div[data-testid="stTextArea"] {{
 
 /* O textarea em si (card branco) */
 .stTextArea textarea {{
-    color: #8E8E93 !important;
+    color: #688194 !important;
     font-size: 0.93rem !important;
     background-color: #FFFFFF !important;
     border: none !important;
@@ -88,7 +87,7 @@ div[data-testid="stTextArea"] {{
 }}
 
 .stTextArea textarea::placeholder {{
-    color: #8E8E93 !important;
+    color: #688194 !important;
     opacity: 0.85;
 }}
 
@@ -134,17 +133,17 @@ div.stButton > button:hover {{
 </style>
 """, unsafe_allow_html=True)
 
-# -------------------------
+
 # TÍTULO
-# -------------------------
+
 st.markdown(
     '<h1 class="titulo-principal">PortfolioAI – Transformando currículos em conversas inteligentes.</h1>',
     unsafe_allow_html=True
 )
 
-# -------------------------
+
 # IMAGEM CENTRAL (celular)
-# -------------------------
+
 col_esq, col_centro, col_dir = st.columns([1.3, 1.4, 1.3])
 
 with col_centro:
@@ -152,14 +151,14 @@ with col_centro:
 
 st.markdown("<div style='height: 14px;'></div>", unsafe_allow_html=True)
 
-# -------------------------
+
 # ÁREA DE PERGUNTA E RESPOSTA
-# -------------------------
+
 col_pergunta, col_resposta = st.columns(2, gap="large")
 
-# =========================================================
+
 # CARD DA PERGUNTA
-# =========================================================
+
 with col_pergunta:
     st.markdown('<div class="label-card">Faça sua pergunta</div>', unsafe_allow_html=True)
 
@@ -177,41 +176,53 @@ with col_pergunta:
     with btn_col2:
         enviar = st.button("Enviar", use_container_width=True)
 
-# =========================================================
+
 # CARD DA RESPOSTA
-# =========================================================
+
 with col_resposta:
     st.markdown('<div class="label-card">&nbsp;</div>', unsafe_allow_html=True)
 
     if "resposta" not in st.session_state:
         st.session_state.resposta = ""
 
-    if enviar and pergunta.strip():
-        try:
-            from backend.chat import perguntar
+    if enviar:
+        if pergunta and pergunta.strip():
             with st.spinner("Consultando a base de conhecimento..."):
-                st.session_state.resposta = perguntar(pergunta)
-        except Exception:
-            st.session_state.resposta = (
-                "Desculpe, não encontrei resposta a sua pergunta. "
-                "Tente novamente ou entre em contato: elissouza@outlook.com.br"
-            )
-    elif enviar and not pergunta.strip():
-        st.session_state.resposta = "Por favor, digite uma pergunta."
+                try:
+                    from backend.chat import perguntar
+                    st.session_state.resposta = perguntar(pergunta.strip())
+                except Exception as e:
+                    st.session_state.resposta = f"Erro ao processar a pergunta: {str(e)}"
+        else:
+            st.session_state.resposta = "Por favor, digite uma pergunta."
 
-    st.text_area(
-        label="resposta",
-        value=st.session_state.resposta if st.session_state.resposta else "",
-        height=185,
-        placeholder="A resposta do Portfolio AI aparecerá aqui. Faça sua pergunta",
-        label_visibility="collapsed",
-        disabled=True,
-        key="output_resposta"
-    )
+    # Card visual estável 
+    resposta_exibida = st.session_state.resposta if st.session_state.resposta else "A resposta do Portfolio AI aparecerá aqui. Faça sua pergunta"
 
-# -------------------------
+    st.markdown(f"""
+    <div style="
+        background-color: rgba(11, 56, 95, 0.55);
+        border-radius: 18px;
+        padding: 16px;
+        backdrop-filter: blur(6px);
+    ">
+        <div style="
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            padding: 16px;
+            min-height: 160px;
+            color: #333333;
+            font-size: 0.93rem;
+            line-height: 1.5;
+            white-space: pre-wrap;
+        ">
+            {resposta_exibida}
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
 # RODAPÉ
-# -------------------------
+
 st.markdown(
     """
     <div class="rodape">

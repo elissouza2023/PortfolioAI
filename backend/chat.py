@@ -8,26 +8,25 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
-from langchain.chains import create_retrieval_chain
-from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain_classic.chains import create_retrieval_chain
+from langchain_classic.chains.combine_documents import create_stuff_documents_chain
 
-# -------------------------------------------------
 # Caminhos
-# -------------------------------------------------
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 KNOWLEDGE_PATH = BASE_DIR / "knowledge_base"
 VECTOR_PATH = BASE_DIR / "vector_store"
 
-# -------------------------------------------------
+
 # Embeddings (mesmo modelo do Colab)
-# -------------------------------------------------
+
 embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
 
-# -------------------------------------------------
+
 # Carrega ou cria o Vector Store
-# -------------------------------------------------
+
 def get_vector_store():
     index_faiss = VECTOR_PATH / "index.faiss"
     index_pkl = VECTOR_PATH / "index.pkl"
@@ -61,9 +60,9 @@ def get_vector_store():
 
     return vector_store
 
-# -------------------------------------------------
+
 # LLM + Prompt + Chain
-# -------------------------------------------------
+
 def get_rag_chain():
     # API Key (prioriza variável de ambiente ou Streamlit secrets)
     api_key = os.getenv("GROQ_API_KEY")
@@ -101,7 +100,7 @@ REGRAS IMPORTANTES:
 Caso deseje mais detalhes, recomendo entrar em contato diretamente com Elisângela."
 
 • Sempre escreva de forma profissional, porém em primeira pessoa, como em uma entrevista.
-  Exemplo: "Sou uma profissional..."
+  Exemplo: "Sou uma profissional..., busco..., pretendo..."
 • Mantenha raciocínio fluido, linguagem clara e tom entusiasmado.
 • Sempre responda em português.
 • Quando possível organize a resposta em tópicos.

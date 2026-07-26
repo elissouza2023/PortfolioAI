@@ -1,0 +1,80 @@
+# 08_FAQ – PortfolioAI
+
+**Versão:** 1.0 (MVP)  
+**Objetivo:** Servir como base de conhecimento para respostas conversacionais naturais durante demonstrações e entrevistas.
+
+## Sobre Mim
+
+**Quem é Elisângela?**  
+Sou Elisângela de Souza, moro em Volta Redonda – RJ. Tenho uma trajetória que combina sólida experiência operacional e administrativa na indústria com uma transição ativa para a área de Tecnologia da Informação. Sou bacharel em Administração, tenho pós-graduação em Engenharia Metalúrgica e estou concluindo a Tecnologia em Segurança da Informação.
+
+**Qual é o seu objetivo profissional?**  
+Meu objetivo é atuar na área de Tecnologia da Informação, especialmente em Segurança da Informação, Suporte Técnico/Cloud, Análise de Dados ou projetos que envolvam administração e tecnologia. Quero unir minha vivência prática de mais de uma década na indústria com os conhecimentos técnicos que venho construindo.
+
+**Por que decidiu migrar para TI?**  
+Durante minha carreira na indústria, percebi o quanto a tecnologia impacta os processos operacionais. Decidi investir fortemente em formação técnica através do Oracle Next Education (Alura) e da graduação em Segurança da Informação para conseguir contribuir de forma mais estratégica, unindo minha experiência prática com soluções tecnológicas reais.
+
+## Formação e Certificações
+
+**Qual é sua formação acadêmica?**  
+Sou bacharel em Administração de Empresas, técnica em Administração e em Contabilidade. Tenho pós-graduação concluída em Engenharia Metalúrgica e estou concluindo a Tecnologia em Segurança da Informação este mês.
+
+**Quais certificações e cursos se destacam?**  
+Destaco a **Certificação Oracle Cloud Infrastructure 2025**, além de centenas de horas no programa Oracle Next Education/Alura em áreas como:
+- Python para Análise de Dados e Machine Learning
+- IA Generativa e RAG
+- Oracle Cloud Infrastructure
+- SQL
+- DevOps & Linux
+- Metodologias Ágeis
+
+Também tenho formações complementares em Pentest Básico, Gestor de Políticas de Segurança da Informação e CCNA (Cisco).
+
+## Experiência Profissional
+
+**Onde você trabalha atualmente?**  
+Trabalho na CSN (Companhia Siderúrgica Nacional), na Usina Presidente Vargas, desde 2013, como Operadora de Produção II. Lá realizo gestão interina de equipe, projetos de melhoria, controle de documentação dos sistemas de qualidade e ambiental, e operação de sistemas de tratamento de água.
+
+**Você já atuou na área de TI?**  
+Sim. Entre 2007 e 2013 trabalhei em várias empresas de informática (Elca Tecnologia, Info in Time, Centercell), atuando como Técnica de Informática, Gerente de Laboratório e Técnico de Suporte Júnior. Nessa época fazia manutenção de hardware, configuração de redes, help desk e suporte presencial/remoto.
+
+**Qual sua maior experiência de liderança?**  
+Já liderei equipes técnicas como Gerente de Laboratório e Gerente de Treinamento, e faço gestão interina de equipe na CSN até hoje. Também coordenei instrutores e produção de material didático em instituições de ensino.
+
+## Competências Técnicas
+
+**Quais são suas principais competências técnicas?**  
+- **Linguagens:** Python, SQL, JavaScript, HTML5 e CSS3  
+- **Ferramentas:** Pandas, NumPy, Scikit-learn, Streamlit, Git/GitHub, Figma  
+- **Cloud:** Oracle Cloud Infrastructure (OCI)  
+- **Outros:** IA Generativa, RAG, LangChain, Linux (CLI), Noções de Machine Learning e Pentest Básico
+
+## Sobre o PortfolioAI
+
+**O que é o PortfolioAI?**  
+É um assistente inteligente que desenvolvi para transformar meu currículo e portfólio em uma experiência conversacional. Ele usa arquitetura **RAG (Retrieval-Augmented Generation)** para responder perguntas com base exclusivamente nos meus documentos, evitando respostas inventadas.
+
+**Como você desenvolveu esse projeto?**  
+Desenvolvi sozinha, aplicando na prática tudo que aprendi em Python, LangChain, embeddings e FAISS durante os cursos do Oracle Next Education. É um projeto 100% hands-on que demonstra minhas competências atuais.
+
+**Quais tecnologias foram usadas?**  
+Python, LangChain, Llama (via Groq), Hugging Face (embeddings) e FAISS como banco vetorial.
+
+## Projetos em Destaque
+
+**Qual é seu projeto principal?**  
+O próprio **PortfolioAI**. Além dele, destaco:
+- **Kaida AI Risk Detector** – Ferramenta para identificar riscos de vazamento de dados em prompts de IA
+- **Dashboard Mercado Siderúrgico Brasileiro** – Análise de dados do setor com Python e Streamlit
+- **Flow State Shift** – Solução de UX para passagem de turno operacional em plantas industriais
+- **Repertor.IA (Módulo H4)** – Vitrine para empresas no projeto de TCC sobre transição de carreira para mulheres 40+
+
+Todos os projetos estão disponíveis no meu [portfólio](https://portifolio-jet-chi.vercel.app) e no [GitHub](https://github.com/elissouza2023).
+
+## Contato
+
+**Como posso entrar em contato?**  
+- E-mail: elissouza@outlook.com.br  
+- Telefone/WhatsApp: (24) 99831-8065 / (24) 99312-7199  
+- LinkedIn: [elisangela-de-souza](https://linkedin.com/in/elisangela-de-souza)  
+- GitHub: github.com/elissouza2023

@@ -58,32 +58,25 @@ PortfolioAI/
 │   └── PortfolioAI_RAG.ipynb
 │
 ├── docs/
-│   ├── Arquitetura da Solução - PortfolioAI.pdf
-│   ├── Especificação de Requisitos de Software - PortfolioAI.pdf
-│   ├── Guia Mestre da Documentação - PortfolioAI.pdf
-│   ├── Mapa da Experiência do Usuário  - PortfolioAI.pdf
-│   ├── PortfolioAI Vision - PortfolioAI.pdf
-│   ├── Product Backlog - PortfolioAI.pdf
-│   ├── PROJECT CHARTER - Projeto PortfolioAI.pdf
+│   ├── Guia_Mestre_Documentacao - PortfolioAI.pdf
+│   ├── Project_Charter  - PortfolioAI.pdf
+│   ├── Product_Vision - PortfolioAI.pdf
+│   ├── Requisitos_SRS - PortfolioAI.pdf
+│   ├── Arquitetura_da_Solucao - PortfolioAI.pdf
+│   ├── Product_Backlog - PortfolioAI.pdf
+│   ├── Mapa_Experiencia_Usuario - PortfolioAI.pdf
 │   │
 │   └── diagrams/
 │       ├── arquitetura.png
 │       ├── fluxo_rag.png
 │       └── jornada_usuario.png
 │
-├── assets/
-│   ├── celular.png
-│   ├── fundo.png
-│
 ├── knowledge_base/
-│   ├── Competências Comportamentais – Elisângela de Souza.pdf
-│   ├── Competências Técnicas - Elisângela de Souza.pdf
-│   ├── Desenvolvimento Profissional Contínuo – Elisângela de Souza.pdf
-│   ├── FAQ – Elisângela de Souza.pdf
-│   ├── Formação Acadêmica - Elisângela de Souza.pdf
-│   ├── Perfil Profissional – Elisângela de Souza.pdf
-│   ├── Projetos e Cases – Elisângela de Souza.pdf
-│   ├── Trajetória Profissional – Elisângela de Souza.pdf
+│   ├── curriculo.pdf
+│   ├── projetos.pdf
+│   ├── competencias.pdf
+│   ├── faq.pdf
+│   └── contato.pdf
 │
 ├── vector_store/
 │   └── FAISS/
