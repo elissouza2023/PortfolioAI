@@ -6,23 +6,25 @@
 ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
 ![Groq](https://img.shields.io/badge/Groq-00A36C?style=for-the-badge&logo=groq&logoColor=white)
 ![FAISS](https://img.shields.io/badge/FAISS-000000?style=for-the-badge&logo=faiss&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![RAG](https://img.shields.io/badge/RAG-Retrieval%20Augmented%20Generation-orange?style=for-the-badge)
 
 **Versão:** 1.0 (MVP)  
 **Data:** Julho de 2026
 
+![GitHub repo size](https://img.shields.io/github/repo-size/seuusuario/PortfolioAI)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 </div>
 
 <br>
 
-O **PortfolioAI** é um assistente inteligente baseado em **RAG (Retrieval-Augmented Generation)** que transforma o currículo e o portfólio profissional em uma experiência conversacional inteligente.
+O **PortfolioAI** é um assistente inteligente baseado em **RAG (Retrieval-Augmented Generation)** que transforma seu currículo e portfólio profissional em uma experiência conversacional inteligente.
 
 ---
 
 ## 📋 Visão do Projeto
 
-Ao invés de navegar por diversos documentos estáticos, recrutadores, gestores, professores e visitantes podem realizar **perguntas em linguagem natural** e obter respostas precisas baseadas exclusivamente na documentação oficial.
+Ao invés de navegar por diversos documentos estáticos, recrutadores, gestores, professores e visitantes podem realizar **perguntas em linguagem natural** e obter respostas precisas baseadas exclusivamente na sua documentação oficial.
 
 ---
 
@@ -31,42 +33,62 @@ Ao invés de navegar por diversos documentos estáticos, recrutadores, gestores,
 ### Objetivo Geral
 Desenvolver um agente inteligente capaz de responder perguntas sobre a trajetória profissional utilizando IA Generativa e arquitetura RAG.
 
+## Exemplos
+
+Pergunta: Exemplos de perguntas que o agente consegue responder.
+Resposta:  Meu objetivo profissional é desenvolver soluções inteligentes, centradas nas pessoas e orientadas pela inovação, utilizando tecnologia e Inteligência Artificial. Busco criar soluções inovadoras que gerem melhores resultados e contribuam para o crescimento e evolução das organizações e das pessoas.
+
 ### Objetivos Específicos
 - Implementar uma arquitetura baseada em RAG
 - Criar uma base de conhecimento estruturada em PDFs
 - Permitir consultas em linguagem natural
 - Minimizar alucinações limitando respostas ao conteúdo documental
 - Fornecer canal de contato quando a informação não estiver disponível
-- Disponibilizar interface web interativa
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📁 Estrutura do Projeto (em elaboração)
 
 ```bash
 PortfolioAI/
-├── app.py                      # Interface Streamlit
+│
+├── README.md
 ├── requirements.txt
 ├── .gitignore
-├── README.md
 │
-├── backend/
-│   └── chat.py                 # Lógica do RAG
-│
-├── assets/
-│   ├── celular.png
-│   └── fundo.png
-│
-├── knowledge_base/             # Base de conhecimento (PDFs)
-│
-├── vector_store/               # Índice FAISS
-│   ├── index.faiss
-│   └── index.pkl
+├── src/
+│   └── código Python
 │
 ├── notebooks/
-│   └── PortfolioAI_RAG.ipynb   # Desenvolvimento e testes do RAG
+│   └── PortfolioAI_RAG.ipynb
 │
-└── docs/                       # Documentação do projeto
+├── docs/
+│   ├── Guia_Mestre_Documentacao - PortfolioAI.pdf
+│   ├── Project_Charter  - PortfolioAI.pdf
+│   ├── Product_Vision - PortfolioAI.pdf
+│   ├── Requisitos_SRS - PortfolioAI.pdf
+│   ├── Arquitetura_da_Solucao - PortfolioAI.pdf
+│   ├── Product_Backlog - PortfolioAI.pdf
+│   ├── Mapa_Experiencia_Usuario - PortfolioAI.pdf
+│   │
+│   └── diagrams/
+│       ├── arquitetura.png
+│       ├── fluxo_rag.png
+│       └── jornada_usuario.png
+│
+├── knowledge_base/
+│   ├── curriculo.pdf
+│   ├── projetos.pdf
+│   ├── competencias.pdf
+│   ├── faq.pdf
+│   └── contato.pdf
+│
+├── vector_store/
+│   └── FAISS/
+│
+└── tests/
+    └── perguntas_validacao.md
+
 ```
 
 
@@ -91,59 +113,38 @@ pip install -r requirements.txt
 ### 3. Execute o notebook
 Abra o `notebooks/PortfolioAI_RAG.ipynb` no Google Colab ou no Jupyter Notebook.
 
-
-
-### 4. Configure a chave da Groq
-Crie o arquivo .streamlit/secrets.toml na raiz do projeto:
-GROQ_API_KEY = "sua_chave_aqui"
-
-
-### 5. Execute a aplicação
-streamlit run app.py
-
 ---
 
 ## ✨ Funcionalidades do MVP
 
-✅ Incluído
-
-- Interface web interativa (Streamlit)
-= Assistente RAG completo
+### ✅ Incluído
+- Assistente RAG completo
 - Base de conhecimento em PDF
-- Busca semântica com embeddings (FAISS + sentence-transformers)
-- Respostas fundamentadas e em primeira pessoa
+- Busca semântica com embeddings
+- Respostas fundamentadas
 - Tratamento elegante para perguntas sem resposta
-- Design responsivo e personalizado
-
----
 
 ### ❌ Fora do Escopo
 - Memória de conversação
 - Interface web
 - Integração com LinkedIn
 - Suporte multilíngue
-- Autenticação de usuários
-  
+
 ---
 
 ## 📈 Critérios de Sucesso
 - Respostas corretas e fundamentadas
 - Uso efetivo de recuperação semântica
 - Baixa taxa de alucinações
-- Interface intuitiva e profissional
-- Documentação completaão
+- Excelente documentação
 
 ---
 
 ## 📄 Documentação Completa
-
 - Project Charter
 - Arquitetura da Solução
 - Mapa de Experiência do Usuário
-- Product Backlog
-- Especificação de Requisitos
 
-  
 ---
 
 ## 🔮 Visão de Futuro
