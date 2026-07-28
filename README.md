@@ -35,7 +35,7 @@ Desenvolver um agente inteligente capaz de responder perguntas sobre a trajetór
 
 ## Exemplos
 
-Pergunta: Exemplos de perguntas que o agente consegue responder.
+Pergunta: Qual o seu objetivo profissional?
 Resposta:  Meu objetivo profissional é desenvolver soluções inteligentes, centradas nas pessoas e orientadas pela inovação, utilizando tecnologia e Inteligência Artificial. Busco criar soluções inovadoras que gerem melhores resultados e contribuam para o crescimento e evolução das organizações e das pessoas.
 
 ### Objetivos Específicos
