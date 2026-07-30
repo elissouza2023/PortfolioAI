@@ -167,7 +167,8 @@ E-mail: elissouza@outlook.com.br
 
 ---
 
-Feito com ❤️ utilizando Python, LangChain e RAG
+"O PortfolioAI não foi criado para responder perguntas. Foi criado para dar voz à trajetória profissional de uma pessoa por meio da Inteligência Artificial."
+
 
 
 
