@@ -158,6 +158,9 @@ Abra o `notebooks/PortfolioAI_RAG.ipynb` no Google Colab ou no Jupyter Notebook.
 ## 🚀 Deploy
 
 - Streamlit Cloud : https://portfolioai-app.streamlit.app/
+  
+
+
 
 ---
 ## 👤 Contato
