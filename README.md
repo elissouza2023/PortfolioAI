@@ -163,7 +163,7 @@ Abra o `notebooks/PortfolioAI_RAG.ipynb` no Google Colab ou no Jupyter Notebook.
 ---
 
 ## 🎥 Demonstração do Projeto - Stremlit Cloud
-
+https://github.com/user-attachments
 
 ---
 ## 👤 Contato
