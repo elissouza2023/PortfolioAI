@@ -55,6 +55,7 @@ PortfolioAI/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
+├── evidenciastreamlit.mp4
 │
 ├── src/
 │   └── código Python
@@ -158,6 +159,12 @@ Abra o `notebooks/PortfolioAI_RAG.ipynb` no Google Colab ou no Jupyter Notebook.
 ## 🚀 Deploy
 
 - Streamlit Cloud : https://portfolioai-app.streamlit.app/
+
+---
+
+## 🎥 Demonstração do Projeto - Streamlit Cloud
+
+[<video src="https://github.com/user-attachments/assets/controls width="100%"></video>](https://github.com/user-attachments/assets/00f81119-fb3c-4311-b53c-8430dfe24e14)
 
 ---
 ## 👤 Contato
