@@ -164,9 +164,9 @@ Abra o `notebooks/PortfolioAI_RAG.ipynb` no Google Colab ou no Jupyter Notebook.
 
 ## 🎥 Demonstração do Projeto - Streamlit Cloud
 
-<video src="https://github.com/user-attachments/assets/
+[<video src="https://github.com/user-attachments/assets/
 
- controls width="100%"></video>
+ controls width="100%"></video>](https://github.com/user-attachments/assets/00f81119-fb3c-4311-b53c-8430dfe24e14)
 
 ---
 ## 👤 Contato
