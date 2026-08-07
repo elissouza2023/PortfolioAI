@@ -172,6 +172,12 @@ Abra o `notebooks/PortfolioAI_RAG.ipynb` no Google Colab ou no Jupyter Notebook.
   
 ---
 ## 🎥 Demonstração do Projeto - Oracle Cloud Infrastructure
+
+
+
+https://github.com/user-attachments/assets/e6963e44-0402-4ff6-928f-b728333c4206
+
+
 ---
 ## 👤 Contato
 Elisângela de Souza  
