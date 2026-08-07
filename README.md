@@ -167,6 +167,12 @@ Abra o `notebooks/PortfolioAI_RAG.ipynb` no Google Colab ou no Jupyter Notebook.
 [<video src="https://github.com/user-attachments/assets/controls width="100%"></video>](https://github.com/user-attachments/assets/00f81119-fb3c-4311-b53c-8430dfe24e14)
 
 ---
+
+- Oracle Cloud Infrastructure (OCI) : http://http://147.15.102.58:8501
+  
+---
+## 🎥 Demonstração do Projeto - Streamlit Cloud
+---
 ## 👤 Contato
 Elisângela de Souza  
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com)  
