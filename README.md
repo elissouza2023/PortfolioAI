@@ -47,8 +47,7 @@ Resposta:  Meu objetivo profissional é desenvolver soluções inteligentes, cen
 
 ---
 
-## 📁 Estrutura do Projeto (em elaboração)
-
+## 📁 Estrutura do Projeto 
 ```bash
 PortfolioAI/
 │
@@ -56,6 +55,7 @@ PortfolioAI/
 ├── requirements.txt
 ├── .gitignore
 ├── evidenciastreamlit.mp4
+├── evidenciaOCI.mp4
 │
 ├── src/
 │   └── código Python
@@ -147,15 +147,6 @@ Abra o `notebooks/PortfolioAI_RAG.ipynb` no Google Colab ou no Jupyter Notebook.
 - Mapa de Experiência do Usuário
 
 ---
-
-## 🔮 Visão de Futuro
-- Interface web interativa
-- Memória conversacional
-- Múltiplos idiomas
-- Integrações externas
-
----
-
 ## 🚀 Deploy
 
 - Streamlit Cloud : https://portfolioai-app.streamlit.app/
