@@ -171,7 +171,7 @@ Abra o `notebooks/PortfolioAI_RAG.ipynb` no Google Colab ou no Jupyter Notebook.
 - Oracle Cloud Infrastructure (OCI) : http://147.15.102.58:8501
   
 ---
-## 🎥 Demonstração do Projeto - Streamlit Cloud
+## 🎥 Demonstração do Projeto - Oracle Cloud Infrastructure
 ---
 ## 👤 Contato
 Elisângela de Souza  
