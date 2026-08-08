@@ -159,7 +159,7 @@ Abra o `notebooks/PortfolioAI_RAG.ipynb` no Google Colab ou no Jupyter Notebook.
 
 ---
 
-- Oracle Cloud Infrastructure (OCI) : http://147.15.102.58:8501
+- Oracle Cloud Infrastructure (OCI) : http://159.112.191.217
   
 ---
 ## 🎥 Demonstração do Projeto - Oracle Cloud Infrastructure
