@@ -157,6 +157,7 @@ Abra o `notebooks/PortfolioAI_RAG.ipynb` no Google Colab ou no Jupyter Notebook.
 
 [<video src="https://github.com/user-attachments/assets/controls width="100%"></video>](https://github.com/user-attachments/assets/00f81119-fb3c-4311-b53c-8430dfe24e14)
 
+OBS: Foi utilizado conta Oracle Cloud Free Tier podendo apresentar algumas limitações de uso após o prazo de teste.
 ---
 
 - Oracle Cloud Infrastructure (OCI) : http://159.112.191.217
