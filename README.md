@@ -160,7 +160,7 @@ Abra o `notebooks/PortfolioAI_RAG.ipynb` no Google Colab ou no Jupyter Notebook.
 - OBS: Foi utilizado conta Oracle Cloud Free Tier podendo apresentar algumas limitações de uso após o prazo de teste.
 ---
 
-- Oracle Cloud Infrastructure (OCI) : http://159.112.191.217
+- Oracle Cloud Infrastructure (OCI) : http://portifolioai.duckdns.org
   
 ---
 ## 🎥 Demonstração do Projeto - Oracle Cloud Infrastructure
