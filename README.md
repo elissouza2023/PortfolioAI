@@ -115,7 +115,7 @@ pip install -r requirements.txt
 Abra o `notebooks/PortfolioAI_RAG.ipynb` no Google Colab ou no Jupyter Notebook.
 
 ---
-✨ Funcionalidades do MVP
+## ✨ Funcionalidades do MVP
 
 ✅ Incluído
 - Assistente RAG completo
@@ -139,6 +139,14 @@ Abra o `notebooks/PortfolioAI_RAG.ipynb` no Google Colab ou no Jupyter Notebook.
 - Uso efetivo de recuperação semântica
 - Baixa taxa de alucinações
 - Excelente documentação
+
+---
+
+## 🛡️ Infraestrutura e Segurança
+O PortfolioAI foi desenhado com foco em segurança de rede e disponibilidade:
+- **Protocolo de Segurança:** Implementação de HTTPS para garantir a criptografia de ponta a ponta na comunicação.
+- **Obfuscação de IP:** Utilização de Dynamic DNS (DuckDNS) para mascarar o IP real da instância, melhorando a segurança contra varreduras externas.
+- **Camadas de Proteção:** Configuração de diretrizes de acesso e segurança na OCI para proteger o ambiente de execução contra acessos indevidos.
 
 ---
 
