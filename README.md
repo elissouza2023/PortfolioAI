@@ -115,22 +115,23 @@ pip install -r requirements.txt
 Abra o `notebooks/PortfolioAI_RAG.ipynb` no Google Colab ou no Jupyter Notebook.
 
 ---
+✨ Funcionalidades do MVP
 
-## ✨ Funcionalidades do MVP
-
-### ✅ Incluído
+✅ Incluído
 - Assistente RAG completo
 - Base de conhecimento em PDF
 - Busca semântica com embeddings
 - Respostas fundamentadas
 - Tratamento elegante para perguntas sem resposta
+- Interface Web responsiva
+- Infraestrutura segura com protocolo HTTPS/SSL
+- Gestão de domínio com DuckDNS (mascaramento de IP e persistência)
 
-### ❌ Fora do Escopo
+❌ Fora do Escopo
 - Memória de conversação
-- Interface web
 - Integração com LinkedIn
-- Suporte multilíngue
-
+- Multilingue
+  
 ---
 
 ## 📈 Critérios de Sucesso
