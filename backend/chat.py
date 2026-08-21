@@ -82,9 +82,9 @@ def get_rag_chain():
     os.environ["GROQ_API_KEY"] = api_key
 
     llm = ChatGroq(
-        model_name="llama-3.3-70b-versatile",
-        temperature=0.2,
-        max_tokens=1200
+        model_name="qwen/qwen3.6-27b",
+        temperature=0.3,
+        max_tokens=1500
     )
 
     system_prompt = """
@@ -137,16 +137,20 @@ def _get_chain():
 # Função principal usada pelo app.py
 # -------------------------------------------------
 def perguntar(pergunta: str) -> str:
-    """
-    Recebe a pergunta do usuário e retorna a resposta do PortfolioAI.
-    """
     if not pergunta or not pergunta.strip():
         return "Por favor, digite uma pergunta."
 
     try:
         chain = _get_chain()
         resultado = chain.invoke({"input": pergunta.strip()})
-        return resultado["answer"]
+        resposta = resultado["answer"]
+
+        # Remove o texto de thinking (se existir)
+        if "<think>" in resposta and "</think>" in resposta:
+            resposta = resposta.split("</think>")[-1].strip()
+
+        return resposta
+
     except Exception as e:
         return (
             "Desculpe, ocorreu um erro ao processar sua pergunta. "
