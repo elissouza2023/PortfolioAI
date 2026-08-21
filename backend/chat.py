@@ -145,13 +145,28 @@ def perguntar(pergunta: str) -> str:
         resultado = chain.invoke({"input": pergunta.strip()})
         resposta = resultado["answer"]
 
-        # Limpeza robusta do thinking
+        # ==================================================
+        # Limpeza robusta do thinking 
+        # ==================================================
         import re
-        # Remove qualquer bloco <think>...</think> (case insensitive)
+
+        # 1. Remove blocos com tags <think> ... </think>
         resposta = re.sub(r"<think>.*?</think>", "", resposta, flags=re.DOTALL | re.IGNORECASE)
-        # Remove possíveis restos de tags
+
+        # 2. Remove o formato "Here's a thinking process: ... " até encontrar a resposta real
+        # (o modelo costuma terminar o thinking e começar a resposta em português)
+        padrao_thinking = r"(?i)here's a thinking process:.*?(?=(Sou uma profissional|Olá|Como profissional|Não encontrei essa informação|$))"
+        resposta = re.sub(padrao_thinking, "", resposta, flags=re.DOTALL)
+
+        # 3. Remove possíveis restos de tags
         resposta = re.sub(r"</?think>", "", resposta, flags=re.IGNORECASE)
+
+        # 4. Limpa espaços extras no início
         resposta = resposta.strip()
+
+        # Se a resposta ficou vazia (caso raro), devolve mensagem padrão
+        if not resposta:
+            resposta = "Não encontrei essa informação na minha base de conhecimento. Caso deseje mais detalhes, recomendo entrar em contato diretamente com Elisângela."
 
         return resposta
 
