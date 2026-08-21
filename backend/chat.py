@@ -82,7 +82,7 @@ def get_rag_chain():
     os.environ["GROQ_API_KEY"] = api_key
 
     llm = ChatGroq(
-        model_name="qwen/qwen3.6-27b",
+        model="qwen/qwen3.6-27b",
         temperature=0.3,
         max_tokens=1500
     )
@@ -145,9 +145,13 @@ def perguntar(pergunta: str) -> str:
         resultado = chain.invoke({"input": pergunta.strip()})
         resposta = resultado["answer"]
 
-        # Remove o texto de thinking (se existir)
-        if "<think>" in resposta and "</think>" in resposta:
-            resposta = resposta.split("</think>")[-1].strip()
+        # Limpeza robusta do thinking
+        import re
+        # Remove qualquer bloco <think>...</think> (case insensitive)
+        resposta = re.sub(r"<think>.*?</think>", "", resposta, flags=re.DOTALL | re.IGNORECASE)
+        # Remove possíveis restos de tags
+        resposta = re.sub(r"</?think>", "", resposta, flags=re.IGNORECASE)
+        resposta = resposta.strip()
 
         return resposta
 
