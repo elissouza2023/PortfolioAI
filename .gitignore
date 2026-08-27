@@ -4,3 +4,4 @@
 # Outros arquivos sensíveis
 .env
 *.env
+__pycache__/
