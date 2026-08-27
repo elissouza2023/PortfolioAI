@@ -57,7 +57,7 @@ PortfolioAI/
 ├── evidenciastreamlit.mp4
 ├── evidenciaOCI.mp4
 │
-├── src/
+├── backend/
 │   └── código Python
 │
 ├── notebooks/
