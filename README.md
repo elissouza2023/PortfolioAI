@@ -59,7 +59,7 @@ PortfolioAI/
 │
 ├── assets/
 │    ├── celular.png
-│    ├──
+│    ├── fundo.png
 │
 ├── backend/
 │   └── chat.py
