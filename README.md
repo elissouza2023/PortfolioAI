@@ -180,7 +180,7 @@ O PortfolioAI foi desenhado com foco em segurança de rede e disponibilidade:
 
 
 
-https://github.com/user-attachments/assets/e6963e44-0402-4ff6-928f-b728333c4206
+[https://github.com/user-attachments/assets/e6963e44-0402-4ff6-928f-b728333c4206](https://github.com/user-attachments/assets/78bc1242-f06a-4613-b65a-cab3fb71c51e)
 
 
 ---
