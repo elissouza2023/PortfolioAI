@@ -80,9 +80,13 @@ PortfolioAI/
 ├── knowledge_base/
 │   ├── curriculo.pdf
 │   ├── projetos.pdf
-│   ├── competencias.pdf
+│   ├── competencias_comportamentais.pdf
+│   ├── competencias_tecnicas.pdf
+│   ├── desenvolvimento_profissional_continuo.pdf
+│   ├── formacao_academica.pdf
+│   ├── perfil_profissional,pdf
 │   ├── faq.pdf
-│   └── contato.pdf
+│   └── trajetoria_profissional.pdf
 │
 ├── vector_store/
 │   └── FAISS/
