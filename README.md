@@ -58,9 +58,8 @@ PortfolioAI/
 ├── evidenciaOCI.mp4
 │
 ├── assets/
-│    ├── chat.py
+│    ├── celular.png
 │    ├──
-│
 │
 ├── backend/
 │   └── chat.py
