@@ -89,8 +89,8 @@ PortfolioAI/
 │   └── trajetoria_profissional.pdf
 │
 ├── vector_store/
-│   └── FAISS/
-│
+│   └── index.faiss
+│   └── index.faiss
 └── tests/
     └── perguntas_validacao.md
 
