@@ -57,6 +57,11 @@ PortfolioAI/
 ├── evidenciastreamlit.mp4
 ├── evidenciaOCI.mp4
 │
+├── assets/
+│    ├── chat.py
+│    ├──
+│
+│
 ├── backend/
 │   └── chat.py
 │
