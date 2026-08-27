@@ -90,7 +90,7 @@ PortfolioAI/
 │
 ├── vector_store/
 │   └── index.faiss
-│   └── index.faiss
+│   └── index.pkl
 └── tests/
     └── perguntas_validacao.md
 
