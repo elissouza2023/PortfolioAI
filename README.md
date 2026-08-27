@@ -58,7 +58,7 @@ PortfolioAI/
 ├── evidenciaOCI.mp4
 │
 ├── backend/
-│   └── código Python
+│   └── chat.py
 │
 ├── notebooks/
 │   └── PortfolioAI_RAG.ipynb
