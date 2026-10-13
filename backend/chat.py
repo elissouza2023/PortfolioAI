@@ -1,5 +1,6 @@
 # backend/chat.py
 import os
+import logging
 from pathlib import Path
 
 from langchain_community.document_loaders import PyPDFDirectoryLoader
