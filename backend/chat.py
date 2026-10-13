@@ -171,8 +171,11 @@ def perguntar(pergunta: str) -> str:
 
         return resposta
 
-    except Exception as e:
+   
+    except Exception:
+        logging.exception("Erro ao processar pergunta no PortfolioAI")
         return (
             "Desculpe, ocorreu um erro ao processar sua pergunta. "
             "Tente novamente ou entre em contato: elissouza@outlook.com.br"
         )
+
