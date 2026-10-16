@@ -83,7 +83,7 @@ def get_rag_chain():
     os.environ["GROQ_API_KEY"] = api_key
 
     llm = ChatGroq(
-        model="qwen/qwen3.6-27b",
+        model="qwen/qwen3.8-27b",
         temperature=0.3,
         max_tokens=1500
     )
